@@ -54,7 +54,7 @@ export default function Header() {
           size={"md"}
           icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
           aria-label={"Open Menu"}
-          display={{ md: "none" }}
+          display={{ md: "none"  }}
           onClick={isOpen ? onClose : onOpen}
         />
         <HStack spacing={8} alignItems={"center"}>
