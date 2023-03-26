@@ -8,14 +8,14 @@ import {
   Link,
 } from "@chakra-ui/react";
 
-const IMAGE =
-  "https://images.unsplash.com/photo-1580901368919-7738efb0f87e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1744&q=80";
 export default function IndexPageCard({
   url,
   cardName,
+  image,
 }: {
   url: string;
   cardName: string;
+  image: string
 }) {
   return (
     <Link href={url}>
@@ -27,7 +27,6 @@ export default function IndexPageCard({
           py={6}
           w={"full"}
           // bg={useColorModeValue("white", "gray.800")}
-          boxShadow={"2xl"}
           rounded={"lg"}
           pos={"relative"}
           zIndex={1}
@@ -40,8 +39,13 @@ export default function IndexPageCard({
             top: 0,
             left: 0,
             borderRadius: 34,
-            backdropFilter: "saturate(180%) blur(20px)",
+            backdropFilter: "saturate(80%) blur(10px)",
             filter: "blur(16px)",
+          }}
+          _hover={{
+            _after: {
+              backdropFilter: "saturate(300%) blur(15px)",
+            },
           }}
         >
           <Box
@@ -54,15 +58,15 @@ export default function IndexPageCard({
               w: "full",
               h: "full",
               pos: "absolute",
-              top: 2,
+              top: 3,
               left: 0,
-              backgroundImage: `url(${IMAGE})`,
+              backgroundImage: `url(${image})`,
               filter: "blur(15px)",
               zIndex: -1,
             }}
             _groupHover={{
               _after: {
-                filter: "blur(20px)",
+                filter: "blur(25px)",
               },
             }}
           >
@@ -71,7 +75,7 @@ export default function IndexPageCard({
               height={{ base: "190px", md: "230px" }}
               width={230}
               objectFit={"cover"}
-              src={IMAGE}
+              src={image}
               alt={"image_homepage"}
             />
           </Box>

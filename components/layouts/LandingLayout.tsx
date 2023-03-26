@@ -7,6 +7,8 @@ export default function LandingLayout(props: { children: React.ReactNode }) {
     .substring(pathname.lastIndexOf("/") + 1)
     .replace("/", "");
 
+  const headingName = pathname.includes("zemne-prace") ? "Zemne prace" : "Kovoobrabanie";
+
   return (
     <Box maxW={{ xl: "980px" }} m={"0 auto"}>
       <Heading textTransform={"capitalize"} mt={20}>
