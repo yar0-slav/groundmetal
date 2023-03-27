@@ -1,11 +1,11 @@
 export interface Post {
   __typename: string;
-  attributes: { __typename: string; urlSlug?: string; title?: string };
+  attributes: { __typename: string; urlSlug?: string; heading?: string };
 }
 
 export interface PostSingle {
   images: PostImages,
-  title: string,
+  heading: string,
 }
 
 interface PostImage {

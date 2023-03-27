@@ -8,16 +8,15 @@ import { Post } from "../../../interfaces/interfaces";
 
 export default function Prace({ posts }: { posts: any }) {
   const router = useRouter();
-  console.log(router);
   return (
     <>
       <LandingLayout>
         <p>Prace</p>
         {posts.map((post: Post, i: number) => {
           const {
-            attributes: { title, urlSlug },
+            attributes: { heading, urlSlug },
           } = post;
-          return <Link key={i} href={`${router.pathname}/${urlSlug}`}>{title}</Link>;
+          return <Link key={i} href={`${router.pathname}/${urlSlug}`}>{heading}</Link>;
         })}
       </LandingLayout>
     </>
@@ -31,6 +30,6 @@ export async function getServerSideProps() {
   });
 
   return {
-    props: { posts: data.bagrovaniePosts.data },
+    props: { posts: data.zemnePraces?.data },
   };
 }
